@@ -20,7 +20,7 @@ Producto* producto_new(void)
   return auxProducto; */
   return (Producto*) malloc(sizeof(Producto));
 }
-Producto* producto_newParam(char* description,char* apellido,char* dni,int idProducto)
+Producto* producto_newParam(char* description,char* apellido,char* dni,int idProduct)
 {
   Producto* auxProducto = producto_new();
   if(auxProducto != NULL)
@@ -34,7 +34,6 @@ Producto* producto_newParam(char* description,char* apellido,char* dni,int idPro
   }
   return auxProducto;;
 }
-​
 int producto_delete(Producto* this)
 {
   int retorno = -1;
@@ -70,10 +69,10 @@ int isValidDescription(char* description)
 {
   return 1;
 }
-int producto_setId(Producto* this, int idProducto)
+int producto_setId(Producto* this, int idProduct)
 {
   int retorno = -1;
-  if(this != NULL && isValidId(idProducto) )
+  if(this != NULL && isValidId(idProduct) )
   {
     this->idProduct = idProduct;
     retorno = 0;
@@ -91,7 +90,7 @@ int producto_getId(Producto* this,int* flagError)
   }
   return auxId;
 }
-int isValidId(int idProducto)
+int isValidId(int idProduct)
 {
   return 1;
 }
